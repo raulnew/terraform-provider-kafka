@@ -82,6 +82,7 @@ provider "kafka" {
 | `sasl_username`         | Username for SASL authentication.                                                                                     | `""`       |
 | `sasl_password`         | Password for SASL authentication.                                                                                     | `""`       |
 | `sasl_mechanism`        | Mechanism for SASL authentication. Allowed values are plain, scram-sha512 and scram-sha256                            | `plain`    |
+| `enable_delete_topic`       | Skip Topic delete .                                                                                                | `false`    |
 
 ## Resources
 ### `kafka_topic`
@@ -240,4 +241,4 @@ resource "kafka_user_scram_credential" "test" {
 [3]: https://cwiki.apache.org/confluence/display/KAFKA/KIP-117%3A+Add+a+public+AdminClient+API+for+Kafka+admin+operations
 [third-party-plugins]: https://www.terraform.io/docs/configuration/providers.html#third-party-plugins
 [install-go]: https://golang.org/doc/install#install
-[topic-config]: https://kafka.apache.org/documentation/#topicconfigs 
+[topic-config]: https://kafka.apache.org/documentation/#topicconfigs

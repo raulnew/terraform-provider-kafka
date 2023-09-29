@@ -25,6 +25,7 @@ type Config struct {
 	SASLUsername            string
 	SASLPassword            string
 	SASLMechanism           string
+	EnableDeleteTopic       bool
 }
 
 func (c *Config) newKafkaConfig() (*sarama.Config, error) {
@@ -184,6 +185,7 @@ func (config *Config) copyWithMaskedSensitiveValues() Config {
 		config.SASLUsername,
 		"*****",
 		config.SASLMechanism,
+		config.EnableDeleteTopic,
 	}
 	return copy
 }

@@ -87,6 +87,11 @@ func (c *LazyClient) DeleteTopic(t string) error {
 	if err != nil {
 		return err
 	}
+
+	if c.Config.EnableDeleteTopic == false {
+		return fmt.Errorf("%w\n%s", "Topic deletion not allowed", "")
+	}
+
 	return c.inner.DeleteTopic(t)
 }
 

@@ -3,7 +3,7 @@
 page_title: "kafka Provider"
 subcategory: ""
 description: |-
-  
+
 ---
 
 # kafka Provider
@@ -34,3 +34,4 @@ description: |-
 - `skip_tls_verify` (Boolean) Set this to true only if the target Kafka server is an insecure development instance.
 - `timeout` (Number) Timeout in seconds
 - `tls_enabled` (Boolean) Enable communication with the Kafka Cluster over TLS.
+- `enable_delete_topic` (Boolean) Set this to true if you want to delete topics

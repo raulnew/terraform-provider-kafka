@@ -97,6 +97,12 @@ func Provider() *schema.Provider {
 				Default:     120,
 				Description: "Timeout in seconds",
 			},
+			"enable_delete_topic": &schema.Schema{
+				Type:        schema.TypeBool,
+				Optional:    true,
+				Default: false,
+				Description: "Set this to true only if you want to delete topics.",
+			},
 		},
 
 		ConfigureFunc: providerConfigure,
@@ -136,6 +142,7 @@ func providerConfigure(d *schema.ResourceData) (interface{}, error) {
 		SASLMechanism:           saslMechanism,
 		TLSEnabled:              d.Get("tls_enabled").(bool),
 		Timeout:                 d.Get("timeout").(int),
+		EnableDeleteTopic:       d.Get("enable_delete_topic").(bool),
 	}
 
 	if config.CACert == "" {
